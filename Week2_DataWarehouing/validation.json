@@ -1,0 +1,71 @@
+{
+  "result": "PASS",
+  "rows": 34,
+  "columns": [
+    "ShipmentID",
+    "ShipDate",
+    "Origin",
+    "Destination",
+    "WeightKG",
+    "CostPKR",
+    "Status",
+    "SourceSystem"
+  ],
+  "total_weight_kg": 578650,
+  "total_weight_tonnes": 578.65,
+  "mode_rows": {
+    "Marine": 12,
+    "Rail": 10,
+    "Road": 12
+  },
+  "mode_weight_kg": {
+    "Marine": 206500,
+    "Rail": 295250,
+    "Road": 76900
+  },
+  "status_counts": {
+    "Delivered": 22,
+    "In Transit": 8,
+    "Delayed": 4
+  },
+  "raw_rows": {
+    "Marine": 12,
+    "Rail": 10,
+    "Road": 15
+  },
+  "removed_road_rows": [
+    {
+      "SourceSystem": "Road",
+      "SourceRow": 7,
+      "ShipmentID": "RD-505",
+      "Decision": "REMOVE",
+      "Reason": "Duplicate ShipmentID; first occurrence retained."
+    },
+    {
+      "SourceSystem": "Road",
+      "SourceRow": 15,
+      "ShipmentID": "(blank)",
+      "Decision": "REMOVE",
+      "Reason": "Blank row: no shipment values."
+    },
+    {
+      "SourceSystem": "Road",
+      "SourceRow": 16,
+      "ShipmentID": "TOTAL",
+      "Decision": "REMOVE",
+      "Reason": "TOTAL aggregate row, not a shipment; would double-count the source subtotal."
+    }
+  ],
+  "checks": {
+    "exact_columns": true,
+    "row_count_34": true,
+    "no_missing_key_date_weight": true,
+    "unique_shipment_ids": true,
+    "exactly_three_statuses": true,
+    "status_counts": true,
+    "weight_total_578650kg": true,
+    "mode_row_counts": true,
+    "mode_weight_totals": true,
+    "road_removed_exactly_three": true
+  }
+}

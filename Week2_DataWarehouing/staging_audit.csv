@@ -1,0 +1,38 @@
+﻿SourceSystem,SourceRow,ShipmentID,Decision,Reason
+Marine,2,MR-1001,KEEP,Valid Marine shipment; source weight already kg; date parsed dd/mm/yyyy.
+Marine,3,MR-1002,KEEP,Valid Marine shipment; source weight already kg; date parsed dd/mm/yyyy.
+Marine,4,MR-1003,KEEP,Valid Marine shipment; source weight already kg; date parsed dd/mm/yyyy.
+Marine,5,MR-1004,KEEP,Valid Marine shipment; source weight already kg; date parsed dd/mm/yyyy.
+Marine,6,MR-1005,KEEP,Valid Marine shipment; source weight already kg; date parsed dd/mm/yyyy.
+Marine,7,MR-1006,KEEP,Valid Marine shipment; source weight already kg; date parsed dd/mm/yyyy.
+Marine,8,MR-1007,KEEP,Valid Marine shipment; source weight already kg; date parsed dd/mm/yyyy.
+Marine,9,MR-1008,KEEP,Valid Marine shipment; source weight already kg; date parsed dd/mm/yyyy.
+Marine,10,MR-1009,KEEP,Valid Marine shipment; source weight already kg; date parsed dd/mm/yyyy.
+Marine,11,MR-1010,KEEP,Valid Marine shipment; source weight already kg; date parsed dd/mm/yyyy.
+Marine,12,MR-1011,KEEP,Valid Marine shipment; source weight already kg; date parsed dd/mm/yyyy.
+Marine,13,MR-1012,KEEP,Valid Marine shipment; source weight already kg; date parsed dd/mm/yyyy.
+Rail,4,RL-45012,KEEP,Valid Rail shipment; skipped two title rows; tonnes converted to kg; ID prefixed RL-.
+Rail,5,RL-45013,KEEP,Valid Rail shipment; skipped two title rows; tonnes converted to kg; ID prefixed RL-.
+Rail,6,RL-45014,KEEP,Valid Rail shipment; skipped two title rows; tonnes converted to kg; ID prefixed RL-.
+Rail,7,RL-45015,KEEP,Valid Rail shipment; skipped two title rows; tonnes converted to kg; ID prefixed RL-.
+Rail,8,RL-45016,KEEP,Valid Rail shipment; skipped two title rows; tonnes converted to kg; ID prefixed RL-.
+Rail,9,RL-45017,KEEP,Valid Rail shipment; skipped two title rows; tonnes converted to kg; ID prefixed RL-.
+Rail,10,RL-45018,KEEP,Valid Rail shipment; skipped two title rows; tonnes converted to kg; ID prefixed RL-.
+Rail,11,RL-45019,KEEP,Valid Rail shipment; skipped two title rows; tonnes converted to kg; ID prefixed RL-.
+Rail,12,RL-45020,KEEP,Valid Rail shipment; skipped two title rows; tonnes converted to kg; ID prefixed RL-.
+Rail,13,RL-45021,KEEP,Valid Rail shipment; skipped two title rows; tonnes converted to kg; ID prefixed RL-.
+Road,2,RD-501,KEEP,Valid Road shipment; ID uppercased; source weight already kg.
+Road,3,RD-502,KEEP,Valid Road shipment; ID uppercased; source weight already kg.
+Road,4,RD-503,KEEP,Valid Road shipment; ID uppercased; source weight already kg.
+Road,5,RD-504,KEEP,Valid Road shipment; ID uppercased; source weight already kg.
+Road,6,RD-505,KEEP,Valid Road shipment; ID uppercased; source weight already kg.
+Road,7,RD-505,REMOVE,Duplicate ShipmentID; first occurrence retained.
+Road,8,RD-506,KEEP,Valid Road shipment; ID uppercased; source weight already kg.
+Road,9,RD-507,KEEP,Valid Road shipment; ID uppercased; source weight already kg.
+Road,10,RD-508,KEEP,Valid Road shipment; ID uppercased; source weight already kg.
+Road,11,RD-509,KEEP,Valid Road shipment; ID uppercased; source weight already kg.
+Road,12,RD-510,KEEP,Valid Road shipment; ID uppercased; source weight already kg.
+Road,13,RD-511,KEEP,Valid Road shipment; ID uppercased; source weight already kg.
+Road,14,RD-512,KEEP,Valid Road shipment; ID uppercased; source weight already kg.
+Road,15,(blank),REMOVE,Blank row: no shipment values.
+Road,16,TOTAL,REMOVE,"TOTAL aggregate row, not a shipment; would double-count the source subtotal."
