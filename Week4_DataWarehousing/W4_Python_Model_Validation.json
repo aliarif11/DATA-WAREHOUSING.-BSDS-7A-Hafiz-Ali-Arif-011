@@ -1,0 +1,112 @@
+{
+  "relationship_design": {
+    "role": "Origin City active; Destination City inactive and measures use USERELATIONSHIP",
+    "relationships": [
+      {
+        "one": "DimDate[DateKey]",
+        "many": "FactShipment[DateKey]",
+        "cardinality": "* : 1",
+        "cross_filter": "Single",
+        "active": "Yes"
+      },
+      {
+        "one": "DimCity[CityKey]",
+        "many": "FactShipment[OriginCityKey]",
+        "cardinality": "* : 1",
+        "cross_filter": "Single",
+        "active": "Yes"
+      },
+      {
+        "one": "DimCity[CityKey]",
+        "many": "FactShipment[DestCityKey]",
+        "cardinality": "* : 1",
+        "cross_filter": "Single",
+        "active": "No"
+      },
+      {
+        "one": "DimRoute[RouteKey]",
+        "many": "FactShipment[RouteKey]",
+        "cardinality": "* : 1",
+        "cross_filter": "Single",
+        "active": "Yes"
+      },
+      {
+        "one": "DimMode[ModeKey]",
+        "many": "FactShipment[ModeKey]",
+        "cardinality": "* : 1",
+        "cross_filter": "Single",
+        "active": "Yes"
+      },
+      {
+        "one": "DimStatus[StatusKey]",
+        "many": "FactShipment[StatusKey]",
+        "cardinality": "* : 1",
+        "cross_filter": "Single",
+        "active": "Yes"
+      }
+    ]
+  },
+  "fact": {
+    "rows": 34,
+    "weight_kg": 578650,
+    "freight_cost_pkr": 4808000,
+    "shipment_count": 34
+  },
+  "dimensions": {
+    "Date": 28,
+    "City": 15,
+    "Route": 21,
+    "Mode": 4,
+    "Status": 4
+  },
+  "blank_rows_across_five_dimensions": 0,
+  "origin_province_distinct": 4,
+  "weight_kg_by_origin_province": {
+    "Sindh": 484350,
+    "Balochistan": 44100,
+    "Punjab": 44100,
+    "Islamabad ICT": 6100
+  },
+  "mode_rows": {
+    "Marine": 12,
+    "Rail": 10,
+    "Road": 12
+  },
+  "mode_weight_kg": {
+    "Marine": 206500,
+    "Rail": 295250,
+    "Road": 76900
+  },
+  "checks": {
+    "relationships_6": true,
+    "cardinality_many_to_one_6": true,
+    "cross_filter_single_6": true,
+    "active_5": true,
+    "inactive_1": true,
+    "Date_key_unique_nonblank": true,
+    "Date_no_blank_rows": true,
+    "City_key_unique_nonblank": true,
+    "City_no_blank_rows": true,
+    "Route_key_unique_nonblank": true,
+    "Route_no_blank_rows": true,
+    "Mode_key_unique_nonblank": true,
+    "Mode_no_blank_rows": true,
+    "Status_key_unique_nonblank": true,
+    "Status_no_blank_rows": true,
+    "DateKey_matches_DateKey": true,
+    "OriginCityKey_matches_CityKey": true,
+    "RouteKey_matches_RouteKey": true,
+    "ModeKey_matches_ModeKey": true,
+    "StatusKey_matches_StatusKey": true,
+    "DestCityKey_matches_CityKey": true,
+    "fact_rows_34": true,
+    "weight_578650kg": true,
+    "freight_cost_4808000pkr": true,
+    "blank_dimension_rows_zero": true,
+    "origin_provinces_4": true,
+    "Sindh_484350kg": true,
+    "Punjab_44100kg": true,
+    "Balochistan_44100kg": true
+  },
+  "all_checks_pass": true
+}
