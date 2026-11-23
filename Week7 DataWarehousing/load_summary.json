@@ -1,0 +1,19 @@
+{
+  "staging_rows": 1805,
+  "reject_rows": 35,
+  "same_file_duplicates": 55,
+  "cross_carrier_duplicates": 15,
+  "april_rows": 1700,
+  "april_weight_kg": 17915700.0,
+  "april_cost_pkr": 158037000.0,
+  "quarter_rows": 2934,
+  "quarter_weight_kg": 36036400.0,
+  "quarter_cost_pkr": 309882000.0,
+  "unknown_city_rows": 18,
+  "unknown_status_rows": 9,
+  "unknown_customer_rows": 11,
+  "dimcustomer_rows": 47,
+  "dimdate_rows": 120,
+  "route_rows": 25,
+  "identity": 0
+}

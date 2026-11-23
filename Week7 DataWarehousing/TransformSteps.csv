@@ -1,0 +1,18 @@
+Step,Transform,Layer
+01,Extract source files without correcting units or values,Extract
+02,Shape columns to the common staging contract and append four sources,Staging
+03,Trim and uppercase ShipmentID; reject blank ID,Transform
+04,Parse ShipDate and truncate booking timestamp to local date,Transform
+05,"Parse WeightKG and convert rail tonnes × 1,000 / courier grams ÷ 1,000",Transform
+06,Cast FreightCostPKR; preserve negative credits,Transform
+07,Trim/case-normalize text statuses and map Courier status codes,Transform
+08,Resolve customer aliases against the business registry,Transform
+09,Resolve customer surrogate key by CustomerID and effective shipment date,Key
+10,Validate required fact rules; route invalid records to RejectLog_April,Reject
+11,Resolve source city aliases; route unresolved cities to Unknown -1,Key
+12,Resolve statuses and unresolved customers to Unknown -1,Key
+13,Remove repeated normalized ShipmentID only within the same source,Deduplicate
+14,Remove matching Road/Courier cross-carrier consignment copy,Deduplicate
+15,"Assign Date, City, Route, Mode, Status and Customer surrogate keys",Key
+16,Insert new April routes and Courier mode; extend DimDate gaplessly,Storage
+17,Write April facts and append to untouched February/March facts,Load
