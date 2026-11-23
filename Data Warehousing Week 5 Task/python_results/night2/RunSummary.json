@@ -1,0 +1,25 @@
+{
+  "version": "2",
+  "extracted_rows": 39,
+  "appended_rows": 37,
+  "fact_rows": 35,
+  "weight_kg": 584950,
+  "freight_cost_pkr": 4860000,
+  "rail_weight_kg": 295250,
+  "status_count": 3,
+  "latest_date": "2026-02-13",
+  "unknown_rows": 1,
+  "delayed_rows": 5,
+  "alias_rows": 23,
+  "alias_city_keys": 14,
+  "all_t7_checks_pass": true,
+  "intermediate_frames_retained": 33,
+  "published_tables": [
+    "DimCity",
+    "DimDate",
+    "DimMode",
+    "DimStatus",
+    "DimRoute",
+    "FactShipment"
+  ]
+}

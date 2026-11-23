@@ -1,0 +1,9 @@
+Check,Expected,Actual,Pass
+Contract columns in each query,7,7,PASS
+Rail subtotal in kg,295250,295250,PASS
+Distinct StatusRaw values,3,3,PASS
+Latest day in ShipDate,13,13,PASS
+Rows in FactShipment,34,34,PASS
+Rows carrying a -1 city key,0,0,PASS
+SUM WeightKG,578650,578650,PASS
+SUM FreightCostPKR,4808000,4808000,PASS

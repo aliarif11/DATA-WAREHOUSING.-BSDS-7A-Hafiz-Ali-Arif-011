@@ -1,0 +1,4 @@
+PakFreight Week 5 Python refresh proof
+Night 1: 34 rows | 578,650 kg | PKR 4,808,000 | Unknown rows 0
+Night 2: 35 rows | 584,950 kg | PKR 4,860,000 | Unknown rows 1
+Status values: 3 | Delayed rows: 5

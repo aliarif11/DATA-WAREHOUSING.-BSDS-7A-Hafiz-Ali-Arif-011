@@ -1,0 +1,4 @@
+RunVersion,Source,File,RowsLanded,LoggedAtUTC
+1,marine,marine_shipments (1).csv,12,2026-11-23T18:52:48.570430+00:00
+1,rail,rail_shipments (1).xlsx,10,2026-11-23T18:52:49.464632+00:00
+1,road,road_shipments (1).csv,15,2026-11-23T18:52:49.468635+00:00

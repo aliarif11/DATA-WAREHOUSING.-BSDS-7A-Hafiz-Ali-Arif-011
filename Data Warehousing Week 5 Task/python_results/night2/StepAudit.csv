@@ -1,0 +1,38 @@
+RunVersion,StepOrder,StepName,Stage,Cadence,Source,RowsBefore,RowsAfter,Note
+2,1,ConnectToAllThreeSources,Extract,per source,marine,12,12,marine_shipments (2).csv
+2,2,LandFaithfulCopyUnchanged,Extract,per source,marine,12,12,raw frame retained
+2,3,LogSourceTimeAndRowCount,Extract,per source,marine,12,12,written to source log
+2,1,ConnectToAllThreeSources,Extract,per source,rail,10,10,rail_shipments (2).xlsx
+2,2,LandFaithfulCopyUnchanged,Extract,per source,rail,10,10,raw frame retained
+2,3,LogSourceTimeAndRowCount,Extract,per source,rail,10,10,written to source log
+2,1,ConnectToAllThreeSources,Extract,per source,road,17,17,road_shipments (2).csv
+2,2,LandFaithfulCopyUnchanged,Extract,per source,road,17,17,raw frame retained
+2,3,LogSourceTimeAndRowCount,Extract,per source,road,17,17,written to source log
+2,4,PromoteHeadersDropJunkRowsAndColumns,Transform,per source,marine,12,12,headers promoted; no junk rows
+2,5,RenameEveryColumnToContract,Transform,per source,marine,12,12,seven-name contract
+2,6,TrimAndCleanText,Transform,per source,marine,12,12,"trim, clean controls, collapse spaces"
+2,7,NormalizeStatusToProperCase,Transform,per source,marine,12,12,17 raw strings -> 3 values after append
+2,8,ParseDatesWithExplicitLocale,Transform,per source,marine,12,12,dd/MM/yyyy en-GB
+2,9,ConvertRailTonsAndSetTypes,Transform,per source,marine,12,12,numeric/date types set
+2,10,AddModeKeyBySource,Transform,per source,marine,12,12,ModeKey=1
+2,4,PromoteHeadersDropJunkRowsAndColumns,Transform,per source,rail,10,10,"SkippedTitleRows, then PromotedHeaders"
+2,5,RenameEveryColumnToContract,Transform,per source,rail,10,10,rail Weight (Tons) retained as WeightTons until converted
+2,6,TrimAndCleanText,Transform,per source,rail,10,10,"trim, clean controls, collapse spaces"
+2,7,NormalizeStatusToProperCase,Transform,per source,rail,10,10,17 raw strings -> 3 values after append
+2,8,ParseDatesWithExplicitLocale,Transform,per source,rail,10,10,native Excel dates
+2,9,ConvertRailTonsAndSetTypes,Transform,per source,rail,10,10,"tons x 1,000"
+2,10,AddModeKeyBySource,Transform,per source,rail,10,10,ModeKey=2
+2,4,PromoteHeadersDropJunkRowsAndColumns,Transform,per source,road,17,15,RemovedBlankRows 17->16; RemovedTotalRow 16->15
+2,5,RenameEveryColumnToContract,Transform,per source,road,15,15,seven-name contract
+2,6,TrimAndCleanText,Transform,per source,road,15,15,"trim, clean controls, collapse spaces"
+2,7,NormalizeStatusToProperCase,Transform,per source,road,15,15,17 raw strings -> 3 values after append
+2,8,ParseDatesWithExplicitLocale,Transform,per source,road,15,15,yyyy-MM-dd ISO
+2,9,ConvertRailTonsAndSetTypes,Transform,per source,road,15,15,numeric/date types set
+2,10,AddModeKeyBySource,Transform,per source,road,15,15,ModeKey=3
+2,11,AppendThreeQueries,Transform,once,FactStaging,37,37,37 source rows -> append
+2,12,RemoveDuplicatesAfterTrim,Transform,once,FactStaging,37,35,subset=['ShipmentID']
+2,13,ConformCityNamesLookupKeysUnknownMinusOne,Transform,once,FactStaging,35,35,two left joins; null keys replaced by -1
+2,14,LoadFourIndependentDimensions,Load,once,published,4,4,source dimension files loaded unchanged
+2,15,LoadDimRouteAfterCityKeys,Load,once,published,21,21,route keys depend on conformed city keys
+2,16,LoadFactShipment,Load,once,published,35,35,only final fact is published; intermediates stay internal
+2,17,ReconcileOrFailRun,Load,once,published,35,35,7 required assertions; unknown count is reported
